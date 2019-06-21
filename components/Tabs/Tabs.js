@@ -35,10 +35,10 @@ class TabLink {
     tabs.forEach(tabElem => tabElem.classList.remove('active-tab'));
 
     // Select all of the elements with the .card class on them
-    const cards = document.querySelectorAll('.card');
+    const allCards = document.querySelectorAll('.card');
 
     // Iterate through the NodeList setting the display style each one to 'none'
-    cards.forEach(cardElem => cardElem.style.display = "none");
+    allCards.forEach(cardElem => cardElem.style.display = "none");
     
     // Add a class of ".active-tab" to this.tabElement
     this.tabElement.classList.add('active-tab');
@@ -51,20 +51,16 @@ class TabLink {
 class TabCard {
   constructor(cardElement){
     // Assign this.cardElement to the cardElement DOM reference
-    // this.cardElement;
+    this.cardElement = cardElement;
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    // this.cardElement;
+    this.cardElement.style.display = "flex";
   }
 }
 
-- Select all classes named ".tab" and assign that value to the tabs variable
-const tabs 
-
-- With your selection in place, now chain a .forEach() method onto the tabs variable to iterate over the DOM NodeList
-
-- In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
-
-
-let tabs = document.querySelectorAll();
+// - Select all classes named ".tab" and assign that value to the tabs variable
+// - With your selection in place, now chain a .forEach() method onto the tabs variable to iterate over the DOM NodeList
+// - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
+const tabs = document.querySelectorAll('.tab');
+tabs.forEach( tab => new TabLink(tab));
